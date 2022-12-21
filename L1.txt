@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define N 10
+#define M 4
+
+
+typedef struct {
+	char Name[N];
+	char gender;
+	int grade;
+} student;
+
+int main(void) {
+	student stud[M];
+	int i;
+	FILE*file;
+	if ((file = fopen("data.txt", "r")) == 0){
+		printf("error");
+	}
+	for(i = 0; i < 4; i++){
+		fscanf(file, "%s %c %d", stud[i].Name, &stud[i].gender, &stud[i].grade);
+	}
+	fclose(file);
+	for(i = 0; i < 4; i++){
+			printf("%s %c %d\n", stud[i].Name, stud[i].gender, stud[i].grade);
+		}
+	for(i = 0; i < 4; i++){
+		if (stud[i].grade >= 4){
+			printf("%s\n", stud[i].Name);
+		}
+	}
+	printf("\n");
+	for(i = 0; i < 4; i++){
+		if ((stud[i].grade >= 4) && (stud[i].gender == 'm')){
+			printf("%s\n", stud[i].Name);
+		}
+	}
+	double a;//Лаб 2
+	scanf("%lf", &a);
+	printf("\n%lf", pow(sin(a), 2) - pow(cos(a), 2));
+}
+

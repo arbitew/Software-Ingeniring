@@ -1,0 +1,23 @@
+import math  # Lab4
+
+
+def f(x):
+    return math.sin(x) ** 2 - math.cos(x) ** 2
+
+
+print(f(int(input())))
+
+
+a = [  # Lab4 1
+    ["p", "M", 5],
+    ["v", "M", 5],
+    ["e", "M", 4],
+    ["l", "F", 3]]
+for i in range(0, len(a)):
+    if a[i][2] == 5 or a[i][2] == 4:
+        print(a[i])
+
+print("\n")
+for i in range(0, len(a)):
+    if a[i][1] == "M" and (a[i][2] == 5 or a[i][2] == 4):
+        print(a[i])
